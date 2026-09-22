@@ -1,0 +1,11 @@
+# Binarios compilados
+a.out
+*.o
+*.out
+
+# Archivos temporales
+*.swp
+*~
+
+# Archivos de sistema
+.DS_Store
