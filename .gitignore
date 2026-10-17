@@ -9,3 +9,5 @@ a.out
 
 # Archivos de sistema
 .DS_Store
+
+bin/
