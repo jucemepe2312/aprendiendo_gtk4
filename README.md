@@ -70,7 +70,3 @@ aprendiendo_gtk4/
     Este repositorio es parte de un proceso de aprendizaje, por lo que el código puede evolucionar con el tiempo.
 
     Los archivos binarios (hola, botones) se incluyen solo como referencia; se recomienda recompilar desde el código fuente.
-
-📄 Licencia
-
-Este proyecto no especifica una licencia. Si deseas usarlo, contacta al autor.

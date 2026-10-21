@@ -19,9 +19,6 @@ static void on_activate(GApplication *app, gpointer user_data){
     gtk_text_buffer_set_text(tb, texto, -1);
     gtk_text_view_set_wrap_mode (GTK_TEXT_VIEW (tv), GTK_WRAP_WORD_CHAR);
 
-    gtk_box_append(GTK_BOX(box), tv);
-
-    gtk_window_set_child(GTK_WINDOW(ventana), box);
     gtk_window_present(GTK_WINDOW(ventana));
 }
 
