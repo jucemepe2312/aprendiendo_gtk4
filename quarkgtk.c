@@ -2,7 +2,7 @@
 
 
 static void on_activate(GApplication *app, gpointer user_data) {
-    g_print ("You need a filename argument.\n");
+    g_print ("necesitas un argumento.\n");
  }
 
 static void abierto(GApplication *app, GFile ** files, gint n_files, gchar *hint, gpointer user_data) {
@@ -19,7 +19,7 @@ static void abierto(GApplication *app, GFile ** files, gint n_files, gchar *hint
   gtk_window_set_child(GTK_WINDOW(ventana), box);
 
   GtkWidget *scr = gtk_scrolled_window_new();
-
+  gtk_box_append(GTK_BOX(box), scr);
 
   GtkWidget *tv = gtk_text_view_new();
 
@@ -46,8 +46,8 @@ static void abierto(GApplication *app, GFile ** files, gint n_files, gchar *hint
     gtk_window_destroy(GTK_WINDOW(ventana));
   }
 
-  gtk_box_append(GTK_BOX(box), scr);
-  gtk_window_set_child(GTK_WINDOW(ventana), box);
+  
+
   
  
 }
