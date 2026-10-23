@@ -45,11 +45,6 @@ static void abierto(GApplication *app, GFile ** files, gint n_files, gchar *hint
     }
     gtk_window_destroy(GTK_WINDOW(ventana));
   }
-
-  
-
-  
- 
 }
 
 int main(int argc, char **argv) {
