@@ -25,7 +25,7 @@ static void abrir_archivo(GFile *archivo, GtkNotebook *nb)
     tv = gtk_text_view_new();
     tb = gtk_text_view_get_buffer(GTK_TEXT_VIEW(tv));
     gtk_text_view_set_wrap_mode(GTK_TEXT_VIEW(tv), GTK_WRAP_WORD_CHAR);
-    gtk_text_view_set_editable(GTK_TEXT_VIEW(tv), FALSE);
+    gtk_text_view_set_editable(GTK_TEXT_VIEW(tv), TRUE);
     gtk_text_buffer_set_text(tb, contenido, length);
     gtk_scrolled_window_set_child(GTK_SCROLLED_WINDOW(scr), tv);
     g_free(contenido);
