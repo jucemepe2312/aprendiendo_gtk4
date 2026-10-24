@@ -48,49 +48,17 @@ static void abierto(
 {
     int i;
     GtkWidget* ventana;
-    GtkWidget* boxv;
+
     GtkWidget* nb;
-    GtkWidget* boxh;
-    GtkWidget* dmy1;
-    GtkWidget* dmy2;
-    GtkWidget* dmy3;
-    GtkWidget* boton_nuevo;
-    GtkWidget* boton_cerrar;
-    GtkWidget* boton_abrir;
-    GtkWidget* boton_guardar;
 
-    ventana = gtk_application_window_new(GTK_APPLICATION(app));
-    gtk_window_set_title(GTK_WINDOW(ventana), "Visor de archivos");
-    gtk_window_set_default_size(GTK_WINDOW(ventana), 480, 320);
+    GtkBuilder *build;
+    build = gtk_builder_new_from_file("quarkgtk.ui");
+    ventana = GTK_WIDGET(gtk_builder_get_object(build, "win"));
+    nb = GTK_WIDGET(gtk_builder_get_object(build, "nb"));
+    gtk_window_set_application(GTK_WINDOW(ventana), GTK_APPLICATION(app));
 
-    boxv = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
-    gtk_window_set_child(GTK_WINDOW(ventana), boxv);
 
-    boxh = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
-    gtk_box_append(GTK_BOX(boxv), boxh);
-
-    dmy1 = gtk_label_new(NULL);
-    gtk_label_set_width_chars(GTK_LABEL(dmy1), 10);
-    dmy2 = gtk_label_new(NULL);
-    gtk_widget_set_hexpand(dmy2, TRUE);
-    dmy3 = gtk_label_new(NULL);
-    gtk_label_set_width_chars(GTK_LABEL(dmy3), 10);
-
-    boton_nuevo = gtk_button_new_with_label("nuevo");
-    boton_cerrar = gtk_button_new_with_label("cerrar");
-    boton_abrir = gtk_button_new_with_label("abrir");
-    boton_guardar = gtk_button_new_with_label("guardar");
-
-    gtk_box_append(GTK_BOX(boxh), dmy1);
-    gtk_box_append(GTK_BOX(boxh), btnn);
-    gtk_box_append(GTK_BOX(boxh), btno);
-    gtk_box_append(GTK_BOX(boxh), dmy2);
-    gtk_box_append(GTK_BOX(boxh), btns);
-    gtk_box_append(GTK_BOX(boxh), btnc);
-    gtk_box_append(GTK_BOX(boxh), dmy3);
-
-    nb = gtk_notebook_new();
-    gtk_box_append(GTK_BOX(boxv), nb);
+    g_object_unref(build);
 
     for (i = 0; i < n_files; i++)
     {

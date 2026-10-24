@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkApplicationWindow" id="win">
+    <property name="title">Quark</property>
+    <property name="default-width">800</property>
+    <property name="default-height">600</property>
+    <child>
+      <object class="GtkBox" id="box_principal">
+        <property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
+        <child>
+          <object class="GtkBox" id="panel_izquierdo">
+            <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+            <property name="width-request">150</property>
+            <child>
+              <object class="GtkLabel" id="espacio">
+                <property name="vexpand">TRUE</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="btno">
+                <property name="label">Abrir</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_guardar">
+                <property name="label">Guardar</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkNotebook" id="nb">
+            <property name="hexpand">TRUE</property>
+            <property name="vexpand">TRUE</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
