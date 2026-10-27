@@ -13,3 +13,5 @@ a.out
 bin/
 .vscode/
 .cache/
+CmakeFiles/
+cmake_install.cmake
