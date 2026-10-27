@@ -22,7 +22,7 @@
               </object>
             </child>
             <child>
-              <object class="GtkButton" id="btn_guardar">
+              <object class="GtkButton" id="btns">
                 <property name="label">Guardar</property>
               </object>
             </child>

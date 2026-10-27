@@ -1,0 +1,3 @@
+/home/julio/aprendiendo_gtk4/CMakeFiles/quarkgtkv3.dir
+/home/julio/aprendiendo_gtk4/CMakeFiles/edit_cache.dir
+/home/julio/aprendiendo_gtk4/CMakeFiles/rebuild_cache.dir

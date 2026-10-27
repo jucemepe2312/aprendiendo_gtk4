@@ -51,12 +51,11 @@ static void abierto(
 
     GtkWidget* nb;
 
-    GtkBuilder *build;
+    GtkBuilder* build;
     build = gtk_builder_new_from_file("quarkgtk.ui");
     ventana = GTK_WIDGET(gtk_builder_get_object(build, "win"));
     nb = GTK_WIDGET(gtk_builder_get_object(build, "nb"));
     gtk_window_set_application(GTK_WINDOW(ventana), GTK_APPLICATION(app));
-
 
     g_object_unref(build);
 
