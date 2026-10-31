@@ -30,8 +30,10 @@ CMAKE_BUILD_TYPE:STRING=Debug
 // override on the command line to select a specific toolchain.
 CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++
 
-//C compiler
-CMAKE_C_COMPILER:STRING=/usr/bin/gcc
+//Full path to the compiler used for language <LANG>. Set by CMake
+// during compiler detection on the first configure; users may
+// override on the command line to select a specific toolchain.
+CMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
