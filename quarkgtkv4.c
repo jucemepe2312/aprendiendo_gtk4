@@ -77,7 +77,7 @@ static void abrir_archivo(GFile* archivo, GtkNotebook* nb)
         gtk_source_buffer_set_language(sb, lang);
     }
 
-    g_free(nombre); // ahora sí, después de usar nombre para adivinar
+    g_free(nombre);
 }
 
 static gboolean save_file(GFile* file, GtkTextBuffer* tb, GtkWindow* win)

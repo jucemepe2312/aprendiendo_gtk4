@@ -1,19 +1,35 @@
 #include <gtk/gtk.h>
+#include <stdio.h>
+#include <sys/stat.h>
 
-static void open_finish(GObject* source, GAsyncResult* result, gpointer user_data)
+void listar_archivos(char archivos[][256], int* num_archivos)
 {
-    GError* error = NULL;
-    GtkFileDialog* dialog = GTK_FILE_DIALOG(source);
-    GFile* file = gtk_file_dialog_open_finish(dialog, result, &error);
-    if (file != NULL)
+    DIR* dir = opendir("/sys/block");
+    if (dir == NULL)
     {
-        /*aqui hay que hacer algo*/
+        *num_archivos = 0;
+        return;
     }
-    else if (error != NULL)
+
+    struct dirent* entry;
+    int count = 0;
+    while ((entry = readdir(dir)) != NULL && count < MAX_ARCHIVOS)
     {
-        g_error_free(error);
+        if (strcmp(entry->d_name, ".") != 0 &&
+            strcmp(entry->d_name, "..") != 0)
+        {
+            strcpy(archivos[count], entry->d_name);
+            count++;
+            printf("%s\n", entry->d_name);
+        }
     }
+
+    *num_archivos = count;
+    closedir(dir);
 }
+
+
+
 
 static void on_activate(GApplication* app, gpointer user_data)
 {
